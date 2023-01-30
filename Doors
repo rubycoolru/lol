@@ -1,0 +1,17 @@
+if game.PlaceId == 6516141723 then
+	local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+	local Window = Library.CreateLib("Doors Lobby", "Midnight")
+	local Player = Window:NewTab("Player")
+	local PlayerSection = Player:NewSection("Player")
+	PlayerSection:NewButton("Leave The Elevator", "If you press the button you Leave The Elevator", function()
+		game:GetService("ReplicatedStorage").Bricks.LobbyElevatorExit:FireServer()
+	end)
+	PlayerSection:NewTextBox("Bypass Input Shop Code", "Easy Input", function(txt)
+		game:GetService("ReplicatedStorage").EntityInfo.ShopCode:FireServer(txt)
+	end)
+	local Test = Window:NewTab("Test")
+	local TestSection = Test:NewSection("Test")
+	TestSection:NewButton("Remote Spy", "This gui you can see the what launched the event", function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/exxtremestuffs/SimpleSpySource/master/SimpleSpy.lua"))()
+	end)
+end
