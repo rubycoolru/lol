@@ -2,7 +2,7 @@ local DefaultSpeed = game.Players.LocalPlayer.Character.Humanoid.WalkSpeed
 local Toggle = false
 
 game.UserInputService.InputBegan:Connect(function(o)
-	if o.KeyCode == Enum.KeyCode.LeftShift then
+	if o.KeyCode == Enum.KeyCode.X then
 		local SoundEffect = Instance.new("Sound")
 		SoundEffect.Parent = game.SoundService
 		SoundEffect.SoundId = "rbxassetid://9125673453"
@@ -15,7 +15,7 @@ game.UserInputService.InputBegan:Connect(function(o)
 	end
 end)
 game.UserInputService.InputEnded:Connect(function(o)
-	if o.KeyCode == Enum.KeyCode.LeftShift then
+	if o.KeyCode == Enum.KeyCode.X then
 		Toggle = false
 		game.TweenService:Create(workspace.CurrentCamera, TweenInfo.new(0.3), {FieldOfView = 70}):Play()
 		game.TweenService:Create(game.Players.LocalPlayer.Character.Humanoid, TweenInfo.new(0.3), {WalkSpeed = DefaultSpeed}):Play()
