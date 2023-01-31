@@ -1,0 +1,4 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Shrek In The Backrooms", HidePremium = false, SaveConfig = false, ConfigFolder = "LHub"})
+local TP = Window:MakeTab({Name = "Teleport"})
+TP:AddButton({Name = "Teleport To SpeicalDoors", Callback = function() for _,v in ipairs(workspace.Level0.SpecialDoors:GetChildren()) do game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = v.Return.CFrame end end})
