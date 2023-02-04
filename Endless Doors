@@ -1,4 +1,8 @@
+if game.PlaceId == 10882998385 then
+	game.StarterGui:SetCore("SendNotification", {Title = "Sorry!", Text = "Sorry. Can't Loading This Script In Lobby. If You Join The Game You Can Loading"})
+end
 if game.PlaceId == 10891480658 then
+	game.StarterGui:SetCore("SendNotification", {Title = "Succes!", Text = "Succes To Loading Scripts!"})
 	workspace.Game.Entities.ChildAdded:Connect(function(i)
 		game.StarterGui:SetCore("SendNotification", {Title = i.Name, Text = i.Name.." Spawned."})
 	end)
