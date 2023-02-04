@@ -1,0 +1,8 @@
+if game.PlaceId == 10891480658 then
+	workspace.Game.Entities.ChildAdded:Connect(function(i)
+		game.StarterGui:SetCore("SendNotification", {Title = i.Name, Text = i.Name.." Spawned."})
+	end)
+	workspace.Game.Entities.ChildRemoved:Connect(function(i)
+		game.StarterGui:SetCore("SendNotification", {Title = i.Name, Text = i.Name.." Gone."})
+	end)
+end
