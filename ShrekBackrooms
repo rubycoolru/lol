@@ -1,9 +1,10 @@
 if game.PlaceId == 9534337535 then
   local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
   local Window = OrionLib:MakeWindow({Name = "Shrek In The Backrooms", HidePremium = false, SaveConfig = false, ConfigFolder = "LHub"})
-  OrionLib:MakeNotification({Name = "lol", Content = "Succes To Loading Gui.", Time = 3})
+  OrionLib:MakeNotification({Name = "lol", Content = "Gui Loading Succes.", Time = 3})
   local TP = Window:MakeTab({Name = "Teleport"})
   TP:AddButton({Name = "Teleport To SpeicalDoors", Callback = function() for _,v in ipairs(workspace.Level0.SpecialDoors:GetChildren()) do game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = v.Return.CFrame end end})
+  TP:AddButton({Name = "Teleport To Motion(Level 2)", Callback = function() game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = workspace.BadgeAreas.Motion.CFrame end})
   local PL = Window:MakeTab({Name = "Player"})
   PL:AddSlider({Name = "Field Of View", Min = 70, Max = 100, Default = 70, Callback = function(v) workspace.CurrentCamera.FieldOfView = v end})
   PL:AddButton({Name = "Morph", Callback = function() game:GetService("ReplicatedStorage").Remotes.Morph:FireServer() end})
