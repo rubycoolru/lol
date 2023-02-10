@@ -1,0 +1,35 @@
+local gui = Instance.new("ScreenGui")
+gui.Parent = game.Players.LocalPlayer.PlayerGui
+gui.Name = "lol's party"
+
+local background = Instance.new("Frame")
+background.Parent = gui
+background.BackgroundColor3 = Color3.new(0.211765, 0.211765, 0.211765)
+background.BorderColor3 = Color3.new(1,1,1)
+background.BorderSizePixel = 1
+background.Name = "Background"
+background.Position = UDim2.new(0.339, 0, 0.906, 0)
+background.Size = UDim2.new(0.321, 0, 0.053, 0)
+
+local txtbox = Instance.new("TextBox")
+txtbox.Parent = background
+txtbox.BackgroundColor3 = Color3.new(0.239216, 0.239216, 0.239216)
+txtbox.BorderSizePixel = 0
+txtbox.Name = "txt"
+txtbox.Position = UDim2.new(0.092, 0, 0, 0)
+txtbox.Size = UDim2.new(0.811, 0, 1, 0)
+txtbox.PlaceholderText = "--url here"
+txtbox.TextXAlignment = Enum.TextXAlignment.Left
+
+local ebt = Instance.new("TextButton")
+ebt.Parent = background
+ebt.BackgroundColor3 = Color3.new(0.188235, 0.188235, 0.188235)
+ebt.BorderSizePixel = 0
+ebt.Name = "TrueButton"
+ebt.Position = UDim2.new(0.903, 0, 0, 0)
+ebt.Size = UDim2.new(0.097, 0, 1, 0)
+ebt.Text = "Execute"
+ebt.TextColor3 = Color3.new(1,1,1)
+ebt.MouseButton1Click:Connect(function()
+    loadstring(game:HttpGet(txtbox.Text))()
+end)
