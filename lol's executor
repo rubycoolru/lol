@@ -19,6 +19,7 @@ txtbox.Name = "txt"
 txtbox.Position = UDim2.new(0.092, 0, 0, 0)
 txtbox.Size = UDim2.new(0.811, 0, 1, 0)
 txtbox.PlaceholderText = "--url here"
+txtbox.Text = ""
 txtbox.TextXAlignment = Enum.TextXAlignment.Left
 
 local ebt = Instance.new("TextButton")
@@ -30,7 +31,14 @@ ebt.Position = UDim2.new(0.903, 0, 0, 0)
 ebt.Size = UDim2.new(0.097, 0, 1, 0)
 ebt.Text = "Execute"
 ebt.TextColor3 = Color3.new(1,1,1)
+
+local ebt = Instance.new("TextButton")
+ebt.Parent = background
+ebt.BackgroundColor3 = Color3.new(1,1,1)
+ebt.BackgroundTransparency = 1
+ebt.Size = UDim2.new(0.092, 0, 1, 0)
+ebt.Text = "X"
+ebt.TextSize = 30
 ebt.MouseButton1Click:Connect(function()
-    loadstring(game:HttpGet(txtbox.Text))()
     gui:Remove()
 end)
