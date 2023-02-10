@@ -51,8 +51,8 @@ if game.PlaceId == 8888615802 then
                 end
             end
      else
-            for i = 1,#children do
-            children[i].Highlight:Remove()
+            for i = 1,#workspace.Monsters:GetChildren() do
+            workspace.Monsters:GetChildren()[i].Highlight:Remove()
             end
         end
     end)
