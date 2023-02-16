@@ -1,0 +1,60 @@
+if game.PlaceId == 6839171747 then
+	local c = function()
+		for i = 0,1 do
+			for _,v in ipairs(game:GetService("Workspace").CurrentRooms[tostring(i)].Assets:GetChildren()) do
+				if v.Name == "Rug" then
+					v:Remove()
+				end
+			end
+			for _,floor in ipairs(game:GetService("Workspace").CurrentRooms[tostring(i)].Parts:GetChildren()) do
+				if floor.Name == "Floor" then
+					floor.Color = Color3.new(0.2, 0.345098, 0.509804)
+					floor.Material = Enum.Material.Fabric
+				end
+			end
+			for _,w in ipairs(game:GetService("Workspace").CurrentRooms[tostring(i)].Parts:GetChildren()) do
+				if w.Name == "Wall" then
+					w.Color = Color3.new(1,1,1)
+					w.Material = Enum.Material.Plastic
+					for _,t in ipairs(w:GetChildren()) do
+						if t.ClassName == "Texture" then
+							t:Remove()
+						end
+					end
+				end
+				if w.Name == "Wall_Strip" then
+					w:Remove()
+				end
+			end
+		end
+	end
+	c()
+	game:GetService("Workspace").CurrentRooms.ChildAdded:Connect(function(s)
+		wait(1)
+		for _,floor in ipairs(s.Parts:GetChildren()) do
+			if floor.Name == "Floor" then
+				floor.Color = Color3.new(0.2, 0.345098, 0.509804)
+				floor.Material = Enum.Material.Fabric
+			end
+		end
+		for _,wall in ipairs(s.Parts:GetChildren()) do
+			if wall.Name == "Wall" then
+				wall.Material = Enum.Material.Plastic
+				wall.Color = Color3.new(1,1,1)
+				for _,wallpaper in ipairs(wall:GetChildren()) do
+					if wallpaper.ClassName == "Texture" then
+						wallpaper:Remove()
+					end
+				end
+			end
+			if wall.Name == "Wall_Strip" then
+				wall:Remove()
+			end
+		end
+		for _,rug in ipairs(s.Assets:GetChildren()) do
+			if rug.Name == "Rug" then
+				rug:Remove()
+			end
+		end
+	end)
+end
