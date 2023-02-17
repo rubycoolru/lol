@@ -52,6 +52,10 @@ if game.PlaceId == 6839171747 then
 			if wall.Name == "Wall_Strip" then
 				wall:Remove()
 			end
+			if wall.Name == "WallAlt" then
+				wall.Material = Enum.Material.Plastic
+				wall.Color = Color3.new(1,1,1)
+			end
 		end
 		wait(1)
 		for _,rug in ipairs(s.Assets:GetChildren()) do
