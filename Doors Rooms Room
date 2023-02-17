@@ -36,7 +36,7 @@ if game.PlaceId == 6839171747 then
 				floor.Material = Enum.Material.Fabric
 			end
 		end
-		for _,wall in ipairs(s:WaitForChild("Parts", 0.5):GetChildren()) do
+		for _,wall in ipairs(s:WaitForChild("Part", 0.5):GetChildren())) do
 			if wall.Name == "Wall" then
 				wall.Material = Enum.Material.Plastic
 				wall.Color = Color3.new(1,1,1)
