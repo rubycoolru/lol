@@ -30,13 +30,13 @@ if game.PlaceId == 6839171747 then
 	end
 	c()
 	game:GetService("Workspace").CurrentRooms.ChildAdded:Connect(function(s)
-		for _,floor in ipairs(s:WaitForChild("Parts"):GetChildren()) do
+		for _,floor in ipairs(s:WaitForChild("Parts", 0.5):GetChildren()) do
 			if floor.Name == "Floor" then
 				floor.Color = Color3.new(0.2, 0.345098, 0.509804)
 				floor.Material = Enum.Material.Fabric
 			end
 		end
-		for _,wall in ipairs(s.Parts:GetChildren()) do
+		for _,wall in ipairs(s:WaitForChild("Parts", 0.5):GetChildren()) do
 			if wall.Name == "Wall" then
 				wall.Material = Enum.Material.Plastic
 				wall.Color = Color3.new(1,1,1)
