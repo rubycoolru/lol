@@ -1,7 +1,7 @@
 if game.PlaceId == 6839171747 then
 	local c = function()
 		for i = 0,1 do
-			for _,v in ipairs(game:GetService("Workspace").CurrentRooms[tostring(i)].Assets:GetChildren()) do
+			for _,v in ipairs(game:GetService("Workspace").CurrentRooms[tostring(i)]:WaitForChild("Assets", 0.5):GetChildren()) do
 				if v.Name == "Rug" then
 					v:Remove()
 				end
@@ -51,7 +51,7 @@ if game.PlaceId == 6839171747 then
 				wall:Remove()
 			end
 		end
-		for _,rug in ipairs(s.Assets:GetChildren()) do
+		for _,rug in ipairs(s:WaitForChild("Assets", 0.5):GetChildren()) do
 			if rug.Name == "Rug" then
 				rug:Remove()
 			end
