@@ -50,7 +50,7 @@ if game.PlaceId == 6839171747 then
 				wall:Remove()
 			end
 		end
-		for _,rug in ipairs(s:WaitForChild("Assets", 0.5):GetChildren()) do
+		for _,rug in ipairs(s:WaitForChild("Assets", 0.7):GetChildren()) do
 			if rug.Name == "Rug" then
 				rug:Remove()
 			end
