@@ -64,4 +64,6 @@ if game.PlaceId == 6839171747 then
 			end
 		end
 	end)
+else
+game.StarterGui:SetCore("ChatMakeSystemMesage", {Text = "[lol] sorry. this script is only works in game."})
 end
