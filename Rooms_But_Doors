@@ -1,0 +1,14 @@
+if game.PlaceId == 11934347969 then
+	game.StarterGui:SetCore("ChatMakeSystemMessage", {Text = "[lol] Thanks For Using this script! have fun!"})
+	local n = function(name)
+		game.StarterGui:SetCore("SendNotification", {Title = name, Text = "Quick! "..name.." is coming.", Icon = "rbxassetid://10233604147", Duration = 3})
+	end
+	game.Workspace.ChildAdded:Connect(function(s)
+		if s.Name == "A25" then
+			n("A-25")
+		end
+		if s.Name == "monster1" then
+			n("A-60")
+		end
+	end)
+end
