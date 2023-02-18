@@ -6,7 +6,7 @@ if game.PlaceId == 11934347969 then
 		sound.SoundId = "rbxassetid://1283290053"
 		sound:Play()
 		game.StarterGui:SetCore("SendNotification", {Title = name, Text = "Quick! "..name.." is coming.", Icon = "rbxassetid://10233604147", Duration = 3})
-		wait(sound.TimeLength)
+		wait(0.5)
 		sound:Remove()
 	end
 	game.Workspace.ChildAdded:Connect(function(s)
