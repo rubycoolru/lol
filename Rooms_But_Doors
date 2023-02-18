@@ -1,5 +1,5 @@
 if game.PlaceId == 11934347969 then
-	game.StarterGui:SetCore("ChatMakeSystemMessage", {Text = "[lol] Thanks For Using this script! have fun!"})
+	game.StarterGui:SetCore("ChatMakeSystemMessage", {Text = "[lol] Thanks For Using Rooms But Doors script! have fun!"})
 	local n = function(name)
 		local sound = Instance.new("Sound")
 		sound.Parent = game.SoundService
