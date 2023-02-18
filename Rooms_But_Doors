@@ -10,5 +10,8 @@ if game.PlaceId == 11934347969 then
 		if s.Name == "monster1" then
 			n("A-60")
 		end
+		if s.Name == "monster2" then
+			n("A-100")
+		end
 	end)
 end
