@@ -1,3 +1,6 @@
+if game.PlaceId == 6516141723 then
+	game.StarterGui:SetCore("SendNotification", {Title = "Script", Text = "Sorry. This script is only works on game. join the game after execute again."})
+end
 if game.PlaceId == 6839171747 then
 	local c = function()
 		for i = 0,1 do
@@ -64,6 +67,4 @@ if game.PlaceId == 6839171747 then
 			end
 		end
 	end)
-else
-game.StarterGui:SetCore("ChatMakeSystemMesage", {Text = "[lol] sorry. this script is only works in game."})
 end
