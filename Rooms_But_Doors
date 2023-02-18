@@ -1,7 +1,13 @@
 if game.PlaceId == 11934347969 then
 	game.StarterGui:SetCore("ChatMakeSystemMessage", {Text = "[lol] Thanks For Using this script! have fun!"})
 	local n = function(name)
+		local sound = Instance.new("Sound")
+		sound.Parent = game.SoundService
+		sound.SoundId = "rbxassetid://1283290053"
+		sound:Play()
 		game.StarterGui:SetCore("SendNotification", {Title = name, Text = "Quick! "..name.." is coming.", Icon = "rbxassetid://10233604147", Duration = 3})
+		wait(sound.TimeLength)
+		sound:Remove()
 	end
 	game.Workspace.ChildAdded:Connect(function(s)
 		if s.Name == "A25" then
