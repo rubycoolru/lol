@@ -19,7 +19,7 @@ if game.PlaceId == 6839171747 then
 			for _,w in ipairs(game:GetService("Workspace").CurrentRooms[tostring(i)].Parts:GetChildren()) do
 				if w.Name == "Wall" then
 					w.Color = Color3.new(1,1,1)
-					w.Material = Enum.Material.Plastic
+					w.Material = Enum.Material.Wood
 					for _,t in ipairs(w:GetChildren()) do
 						if t.ClassName == "Texture" then
 							t:Remove()
@@ -44,7 +44,7 @@ if game.PlaceId == 6839171747 then
 		wait(0.5)
 		for _,wall in ipairs(s.Parts:GetChildren()) do
 			if wall.Name == "Wall" then
-				wall.Material = Enum.Material.Plastic
+				wall.Material = Enum.Material.Wood
 				wall.Color = Color3.new(1,1,1)
 				for _,wallpaper in ipairs(wall:GetChildren()) do
 					if wallpaper.ClassName == "Texture" then
@@ -56,7 +56,7 @@ if game.PlaceId == 6839171747 then
 				wall:Remove()
 			end
 			if wall.Name == "WallAlt" then
-				wall.Material = Enum.Material.Plastic
+				wall.Material = Enum.Material.Wood
 				wall.Color = Color3.new(1,1,1)
 			end
 		end
