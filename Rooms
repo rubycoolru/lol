@@ -7,5 +7,5 @@ if game.PlaceId == 5076734934 then
 	local PlayerItem = Player:AddSection({Name = "Item"})
 	Player:AddButton({Name = "Gummy Flashlight", Callback = function() game:GetService("Lighting")["Gummy Flashlight"]:Clone().Parent = game.Players.LocalPlayer.Backpack end})
 	local Light = Window:MakeTab({Name = "Light"})
-	Light:AddToggle({Name = "Already full lighting", Default = false, Callback = function(v) game:GetService("Lighting").Changed:Connect(function(s) if v then if s == "Brightness" then game:GetService("Lighting").Brightness = 1 end end end) end})
+	Light:AddToggle({Name = "Already full lighting", Default = false, Callback = function(v) game:GetService("Lighting").Changed:Connect(function(s) if v then if s == "Brightness" then game:GetService("Lighting").Brightness = 5 end end end) end})
 end
