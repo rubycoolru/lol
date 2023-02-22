@@ -14,6 +14,7 @@ if game.PlaceId == 10891480658 then
 		label.BackgroundTransparency = 1
 		label.Size = UDim2.new(1,0,1,0)
 		label.Text = i.Name
+		label.TextColor3 = Color3.new(1,1,1)
 	end)
 	workspace.Game.Entities.ChildRemoved:Connect(function(i)
 		game.StarterGui:SetCore("SendNotification", {Title = i.Name, Text = i.Name.." Gone."})
