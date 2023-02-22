@@ -5,6 +5,15 @@ if game.PlaceId == 10891480658 then
 	game.StarterGui:SetCore("ChatMakeSystemMessage", {Text = "[lol] Thanks For Loading!"})
 	workspace.Game.Entities.ChildAdded:Connect(function(i)
 		game.StarterGui:SetCore("SendNotification", {Title = i.Name, Text = i.Name.." Spawned."})
+		local gui = Instance.new("BillboardGui")
+		gui.Parent = i
+		gui.AlwaysOnTop = true
+		gui.Size = UDim2.new(1,0,1,0)
+		local label = Instance.new("TextLabel")
+		label.Parent = gui
+		label.BackgroundTransparency = 1
+		label.Size = UDim2.new(1,0,1,0)
+		label.Text = i.Name
 	end)
 	workspace.Game.Entities.ChildRemoved:Connect(function(i)
 		game.StarterGui:SetCore("SendNotification", {Title = i.Name, Text = i.Name.." Gone."})
