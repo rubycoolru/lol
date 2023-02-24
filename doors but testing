@@ -1,0 +1,7 @@
+if game.PlaceId == 6839171747 then
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    local Window = Library.CreateLib("Doors", "BloodTheme")
+    local PlayerTab = Window:NewTab("Player")
+    local PlayerSection = PlayerTab:NewSection("Player")
+    PlayerSection:NewToggle("Safe Speed", "Change The Speed but its a bypass", function(v) game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").Changed:Connect(function(vt) if vt == "WalkSpeed" then if v then game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").WalkSpeed = 20 else game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").WalkSpeed = 16 end end end) end)
+end
