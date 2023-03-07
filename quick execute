@@ -1,6 +1,6 @@
 local gui = Instance.new("ScreenGui")
-gui.Parent = game.Players.LocalPlayer.PlayerGui
-gui.Name = "lol's party"
+gui.Parent = game.CoreGui
+gui.Name = "lol's quick"
 
 local background = Instance.new("Frame")
 background.Parent = gui
