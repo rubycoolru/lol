@@ -5,3 +5,4 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/rubycoolru/lol/main/E
 loadstring(game:HttpGet('https://raw.githubusercontent.com/rubycoolru/lol/main/Rooms_But_Doors'))()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/rubycoolru/lol/main/Rooms_Room_Doors'))()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/rubycoolru/lol/main/Rooms'))()
+loadstring(game:HttoGet('https://raw.githubusercontent.com/rubycoolru/lol/main/MuderMistery2'))()
