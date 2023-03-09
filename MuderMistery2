@@ -11,8 +11,8 @@ esp:NewToggle("Coin ESP", "You Can see the coins", function(s)
                     break
                 end
                 if v:FindFirstChild("Map") then
+                	b = true
                     return v
-                    b = true
                 end
             end
         end
