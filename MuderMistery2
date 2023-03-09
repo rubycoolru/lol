@@ -1,3 +1,4 @@
+if game.PlaceId == 142823291 then
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 local Window = Library.CreateLib("MM2", "GrapeTheme")
 local esp = Window:NewTab("ESP"):NewSection("ESP")
@@ -38,3 +39,4 @@ local player = Window:NewTab("Player"):NewSection("Player")
 player:NewButton("Teleport To Lobby", "Tried the fight", function()
     game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(-107.75466918945312, 138.34988403320312, -0.015367301180958748)
 end)
+end
