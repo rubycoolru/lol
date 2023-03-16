@@ -3,5 +3,13 @@ if game.PlaceId == 6839171747 then
     local Window = Library.CreateLib("Doors", "BloodTheme")
     local PlayerTab = Window:NewTab("Player")
     local PlayerSection = PlayerTab:NewSection("Player")
-    PlayerSection:NewToggle("Safe Speed", "Change The Speed but its a bypass", function(v) game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").Changed:Connect(function(vt) if vt == "WalkSpeed" then if v then game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").WalkSpeed = 20 else game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").WalkSpeed = 16 end end end) end)
+    local Change = nil
+    PlayerSection:NewToggle("Safe Speed", "Change The Speed but its a bypass", function(v) Change = v end) end)
+    game.Players.LocalPlayer.Character.Humanoid.Changed:Connect(function(s)
+        if s == "WalkSpeed" then
+            if Change then
+                game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 20
+            end
+        end
+    end)
 end
