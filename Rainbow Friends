@@ -1,0 +1,157 @@
+if game.PlaceId == 7991339063 then
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    local Window = Library.CreateLib("Rainbow Friends (Lobby)", "Sentinel")
+    local Player = Window:NewTab("Player")
+    local PlayerSection = Player:NewSection("Player")
+    PlayerSection:NewToggle("Toggle Jump", "Toggle Can Jump", function(state)
+        if state then
+            game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+            else
+            game.Players.LocalPlayer.Character.Humanoid.JumpPower = 0
+        end
+    end)
+    local Test = Window:NewTab("Test")
+    local TestSection = Test:NewSection("Test")
+    TestSection:NewButton("DarkDex","nothing", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/Lazy_Dex.lua"))()
+    end)
+    PlayerSection:NewTextBox("Chat All","All Chat You Want but show only you", function(txt)
+        local children = game.Players:GetChildren()
+        for _,v in ipairs(game.Players:GetChildren()) do
+            if v.Character then
+                if v.Character:FindFirstChild("Head") then
+                    game.Chat:Chat(v.Character.Head, txt, Enum.ChatColor.White)
+                end
+            end
+        end
+    end)
+end
+if game.PlaceId == 8888615802 then
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    local Window = Library.CreateLib("Rainbow Friends (Game)", "Sentinel")
+    local Entitys = Window:NewTab("Entitys")
+    local EntitysSection = Entitys:NewSection("Entitys")
+    EntitysSection:NewToggle("Toggle Entity ESP", "EntityESP", function(state)
+        if state then
+            for _,v in ipairs(workspace.Monsters:GetChildren()) do
+                local EntityNames = {
+                    ["blue"] = {
+                        ["Color"] = Color3.new(0,0,1)
+                    },
+                    ["green"] = {
+                        ["Color"] = Color3.new(0,1,0)
+                    },
+                    ["orange"] = {
+                        ["Color"] = Color3.new(1, 0.666667, 0)
+                    },
+                }
+                if EntityNames[string.lower(v.Name)] then
+                    local esp = Instance.new("Highlight")
+                    esp.Parent = v
+                    esp.FillColor = EntityNames[string.lower(v.Name)].Color
+                    esp.FillTransparency = 0.5
+                    esp.OutlineColor = Color3.new(1,1,1)
+                    esp.OutlineTransparency = 0.7
+                end
+            end
+        else
+            for _,i in ipairs(workspace.Monsters:GetChildren()) do
+                if workspace.Monsters:FindFirstChildWhichIsA("Highlight") then
+                    workspace.Monsters:FIndFirstChildWhichIsA("Highlight"):Remove()
+                end
+            end
+        end
+    end)
+    EntitysSection:NewToggle("Toggle Player ESP", "PlayerESP", function(state)
+    local children = game.Players:GetChildren()
+        if state then
+            for _n,v in ipairs(game.Players:GetChildren()) do
+                local esp = Instance.new("Highlight")
+                esp.Parent = v.Character
+                esp.Name = "CLight"
+                esp.FillColor = Color3.new(1,1,1)
+                esp.FillTransparency = 0.5
+                esp.OutlineTransparency = 1
+            end
+        else
+            for _n,v in ipairs(game.Players:GetChildren()) do
+                if v.Character:FindFirstChild("CLight") then
+                    v.Character.CLight:Remove()
+                end
+            end
+        end
+    end)
+    local Player = Window:NewTab("Player")
+    local PlayerSection = Player:NewSection("Player")
+	if #game.Players:GetChildren() <= 1 then
+    	PlayerSection:NewSlider("WalkSpeed", "Change WalkSpeed", 50, 16, function(s)
+        	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+    	end)
+    	PlayerSection:NewSlider("Field of view", "Change field of view", 200,70, function(s)
+        	workspace.CurrentCamera.FieldOfView = s
+    	end)
+	end
+	PlayerSection:NewButton("Teleport To Near Theater Locker", "Teleport", function()
+		game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(405.013, 47.6703, 69.0136)
+	end)
+    local Item = Window:NewTab("Item")
+    local ItemSection = Item:NewSection("Item")
+    ItemSection:NewButton("Show BlueBlocks", "ESP", function()
+    	for _i,v in ipairs(workspace:GetChildren()) do
+    		for s = 1,24 do
+    			if v.Name == "Block"..s then
+    				local esp = Instance.new("Highlight")
+    				esp.Parent = v
+    				esp.FillColor = Color3.new(0,0,1)
+    				esp.FillTransparency = 0.5
+    				esp.OutlineColor = Color3.new(1,1,1)
+    			end
+    		end
+    	end
+    end)
+	ItemSection:NewButton("Show GreenFoods", "ESP", function()
+		for i = 1,#workspace:GetChildren() do
+			local FoodsN = {
+				["FoodGreen"] = true,
+				["FoodPink"] = true,
+				["FoodOrange"] = true,
+			}
+			if FoodsN[workspace:GetChildren()[i].Name] then
+				local esp = Instance.new("Highlight")
+				esp.Parent = workspace:GetChildren()[i]
+				esp.FillColor = Color3.new(0,1,0)
+				esp.FillTransparency = 0.5
+				esp.OutlineColor = Color3.new(1,1,1)
+			end
+		end
+	end)
+	ItemSection:NewButton("Show Fuses", "ESP", function()
+		for _,w in ipairs(workspace:GetChildren()) do
+			for n = 1,14 do
+				if w.Name == "Fuse"..n then
+					local esp = Instance.new("Highlight")
+					esp.Parent = w
+					esp.FillColor = Color3.new(1,0,0)
+					esp.FillTransparency = 0.5
+					esp.OutlineColor = Color3.new(1,1,1)
+				end
+			end
+		end
+	end)
+	ItemSection:NewButton("Show Batterys", "ESP", function()
+		for _,l in ipairs(workspace:GetChildren()) do
+			if l.Name == "Battery" then
+				local esp = Instance.new("Highlight")
+				esp.Parent = l
+				esp.FillColor = Color3.new(1,1,0)
+				esp.FillTransparency = 0.5
+				esp.OutlineColor = Color3.new(1,1,1)
+			end
+		end
+	end)
+    local Test = Window:NewTab("Test")
+    local TestSection = Test:NewSection("Test")
+    TestSection:NewButton("Dark Dex", "Can Explore The World", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/Lazy_Dex.lua"))()
+    end)
+end
