@@ -1,0 +1,7 @@
+local l = {
+	psst = function()
+		print("azasdas")
+	end,
+}
+
+return l
