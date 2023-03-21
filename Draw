@@ -1,6 +1,6 @@
 local l = {}
 
-function l.Draw()
+function l.Draw(asd:Instance)
   local gui = Instance.new("BillboardGui")
   gui.Parent = location
   gui.AlwaysOnTop = true
