@@ -11,3 +11,5 @@ function l.Draw()
   label.Size = UDim2.new(1,0,1,0)
   label.Text = text
 end
+
+return l
